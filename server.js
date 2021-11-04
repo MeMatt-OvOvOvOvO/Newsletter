@@ -70,7 +70,7 @@ app.post("/handleForm", function (req, res) {
     for (const x in users){
         if(users[x].email == req.body.email){
             //res.send("Taki email juz jest w bazie :((");
-            res.send(`<body><a style="font-size: 40px" href="https://mateuszjanicki3p1.herokuapp.com/">powrot</a><script>alert("Taki email juz jest w bazie :((")</script></body>`)
+            res.send(`<body><a style="font-size: 40px" href="https://mateuszjanicki3p1newsletter.herokuapp.com/">powrot</a><script>alert("Taki email juz jest w bazie :((")</script></body>`)
         }
     }
     users.push(
