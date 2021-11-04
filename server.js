@@ -1,6 +1,6 @@
 var express = require("express")
 var app = express()
-const PORT = 4000;
+var PORT = process.env.PORT || 3000; // bardzo istotna linijka - port zostaje przydzielony przez Heroku
 
 const bodyParser = require("body-parser")
 app.use(express.static('static'))
