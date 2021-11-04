@@ -48,9 +48,20 @@ app.get("/removeUserByCheckbox", function(req, res){
     console.log(req.users)
 })
 app.post("/delete", function(req, res){
-    for(i = 0; i < users.length; i++){
-        if(req.body.email == users[i].email){
-            users.splice(i, 1);
+    if(Array.isArray(req.body.email)){
+        var some = req.body.email
+        for(m = 0; m < some.length; m++){
+            for(j = 0; j < users.length; j++){
+                if(users[j].email == some[m]){
+                    users.splice(j, 1);
+                }
+            }
+        }
+    }else{
+        for(i = 0; i < users.length; i++){
+            if(req.body.email == users[i].email){
+                users.splice(i, 1);
+            }
         }
     }
     res.redirect("/");
